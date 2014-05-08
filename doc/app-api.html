@@ -1,0 +1,137 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <title>To-Do List Management RESTFull API.</title>
+    <link rel="stylesheet" type="text/css" href="api.css">
+</head>
+<body>
+<h1>To-Do List Management RESTFull API.</h1>
+<hr>
+<div id="request-mapping">
+    <h2>Request Mapping</h2>
+    <table>
+        <tbody>
+        <tr>
+            <th>Method</th>
+            <th>URL</th>
+            <th>Class</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>"/api/note/list"</td>
+            <td>
+                <a href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/NoteController.java"
+		                >NoteController</a>
+            </td>
+            <td>
+                <code>Returns list of notes for current user.</code>
+            </td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>"/api/note/view/{noteId}"</td>
+            <td>
+                <a href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/NoteController.java"
+		                >NoteController</a>
+            </td>
+            <td>
+                <code>Returns note by ID.</code>
+            </td>
+        </tr>
+        <tr>
+	        <td>DELETE</td>
+	        <td>"/api/note/update/{noteId}"</td>
+	        <td>
+		        <a href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/NoteController.java">NoteController</a>
+	        </td>
+	        <td>
+		        <code>Removes note.</code>
+	        </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>"/api/note/add"</td>
+            <td>
+                <a href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/NoteController.java">NoteController</a>
+            </td>
+            <td>
+                <code>Persists new note.</code>
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>"/api/note/update/{noteId}"</td>
+            <td>
+                <a href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/NoteController.java">NoteController</a>
+            </td>
+            <td>
+                <code>Updates existing note.</code>
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>"/api/account/getUserName"</td>
+            <td>
+                <a href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/AccountController.java">com.baev.todolist.controller.rest
+                    .AccountController</a>
+            </td>
+            <td>
+                <code>Retrieves current user name.</code>
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>"/api/session/login"</td>
+            <td>
+                <a
+                        href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/SessionController.java">com.baev.todolist.controller.rest
+                    .SessionController</a>
+            </td>
+            <td>
+                <code>Authenticates user in the current user session.</code>
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>"/api/session/logout"</td>
+            <td>
+                <a
+                        href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/SessionController.java">com.baev.todolist.controller.rest
+                    .SessionController</a>
+            </td>
+            <td>
+                <code>Used by the client to logout of the application.</code>
+            </td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>"/api/session/register"</td>
+            <td>
+                <a
+                        href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/SessionController.java">com.baev.todolist.controller.rest
+                    .SessionController</a>
+            </td>
+            <td>
+                <code>Creates a new user and authenticates user with this account.</code>
+            </td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>"/api/session/isLoggedIn"</td>
+            <td>
+                <a
+                        href="../todolist-ui/src/main/java/com/baev/todolist/controller/rest/SessionController.java">com.baev.todolist.controller.rest
+                    .SessionController</a>
+            </td>
+            <td>
+                <code>Checks if user is logged in.</code>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+To run project do the following steps:
+
+1. Go to project root directory and run in command line: "mvn clean install -U"
+
+2. Go to "todolist-ui" directory and run "mvn jetty:run" to start Jetty server.
+
+3. Open page http://localhost:8080/ in your browser.
+
+4. That's all. HSQLDB in-memory DB is used to store your data, so it will be vanished on Jetty stop.

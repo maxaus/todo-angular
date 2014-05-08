@@ -1,0 +1,13 @@
+<form name="registrationForm" class="form-login">
+	<fieldset>
+		<legend>User registration</legend>
+	</fieldset>
+	<label>Username</label>
+	<input type="text" placeholder="username" required="" autofocus="" data-ng-model="account.username">
+	<label>Password</label>
+	<input type="password" placeholder="password" required="" data-ng-model="account.password">
+	<label>Repeat password</label>
+	<input type="password" placeholder="repeat password" required="" data-ng-model="account.repeatedPassword">
+	<br/>
+	<input type="submit" value="Save" class="m1 warning" data-ng-click="register(account, registrationForm)"/>
+</form>

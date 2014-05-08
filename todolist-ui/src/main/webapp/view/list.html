@@ -1,0 +1,78 @@
+<h2>To-Do list notes</h2>
+
+<div data-ng-show="isLoggedIn">
+	<form name="createForm" class="form-todo">
+		<fieldset>
+			<label>Title</label>
+			<input type="text" placeholder="title" required autofocus data-ng-model="todo.title">
+			<label>Description</label>
+			<textarea placeholder="description" required
+			          data-ng-model="todo.description"></textarea>
+			<label>Due date</label>
+			<input type="date" data-ng-model="todo.dueDate"/>
+			<label>Priority</label>
+			<input type="number" placeholder="priority" required autofocus
+			       data-ng-init="todo.priority=1" data-ng-model="todo.priority">
+			<br/>
+			<input class="m1 warning" value="Create" type="submit"
+			       data-ng-click="create(todo, createForm)"/>
+		</fieldset>
+	</form>
+	<form name="updateForm">
+		<table class="table striped bordered hovered">
+			<thead>
+			<tr>
+				<th class="text-left">Title</th>
+				<th class="text-left">Description</th>
+				<th class="text-left">Completed</th>
+				<th class="text-left"><a data-ng-click="sortList('DUE_DATE')" class="link">Due date</a></th>
+				<th class="text-left"><a data-ng-click="sortList('PRIORITY')" class="link">Priority</a></th>
+				<th class="text-left">Actions</th>
+			</tr>
+			</thead>
+
+			<tbody>
+			<tr ng-repeat="todo in list">
+				<td class="right">
+					<span data-ng-bind="todo.title" data-ng-hide="todo.editMode"></span>
+					<input data-ng-model="todo.title" required data-ng-show="todo.editMode">
+				</td>
+				<td class="right">
+					<span data-ng-bind="todo.description" data-ng-hide="todo.editMode"></span>
+					<textarea data-ng-model="todo.description"
+					          required data-ng-show="todo.editMode"></textarea>
+				</td>
+				<td class="right">
+					<input type="checkbox" data-ng-model="todo.completed" ng-checked="todo.completed"
+					       ng-disabled="!todo.editMode">
+				</td>
+				<td class="right">
+					<span data-ng-hide="todo.editMode">{{todo.dueDate|date:'yyyy-MM-dd'}}</span>
+
+					<input id="dueDate_{{$index}}" type="date" name="dueDate"
+					       value="{{todo.dueDate|date:'yyyy-MM-dd'}}"
+					       data-ng-show="todo.editMode"/>
+				</td>
+				<td class="right">
+					<span data-ng-bind="todo.priority" data-ng-hide="todo.editMode"></span>
+					<input type="number" class="form-control" placeholder="Priority" required
+					       autofocus data-ng-model="todo.priority" data-ng-show="todo.editMode">
+				</td>
+				<td class="right">
+					<input data-ng-click="todo.editMode = true" data-ng-hide="todo.editMode" type="button"
+					       value="Edit" class="info"/>
+					<input data-ng-click="updateTodo(todo, updateForm, $index)" type="button" value="Save"
+					       data-ng-show="todo.editMode" class="warning"/>
+					<input data-ng-click="deleteTodo(todo)" type="button" value="Delete" class="danger"/>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+<div data-ng-hide="isLoggedIn">
+	Only authorised users can create notes. Please, log in.
+</div>
+<div id="deleteConfirm" style="display: none">
+	Do you really want to delete this note?
+</div>

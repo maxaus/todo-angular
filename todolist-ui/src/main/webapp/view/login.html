@@ -1,0 +1,14 @@
+<form class="form-login" xmlns="http://www.w3.org/1999/html">
+	<fieldset>
+		<legend>Enter application</legend>
+		<label>Username</label>
+		<input data-ng-init="account.username='admin'" type="text" class="form-control" placeholder="username"
+		       required=""
+		       autofocus="" data-ng-model="account.username">
+		<label>Password</label>
+		<input data-ng-init="account.password='admin'" type="password" class="form-control" placeholder="password"
+		       required="" data-ng-model="account.password">
+		<br/>
+		<input type="submit" value="Login" class="m1 warning" data-ng-click="login(account)"/>
+	</fieldset>
+</form>

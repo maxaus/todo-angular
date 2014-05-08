@@ -1,0 +1,18 @@
+.form-login {
+	max-width: 340px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.form-todo {
+	max-width: 340px;
+	padding: 7px;
+}
+
+.metro input[type="submit"].m1 {
+	margin-top: 10px;
+}
+
+.link {
+	cursor: pointer;
+}
